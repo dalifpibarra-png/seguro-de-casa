@@ -1,0 +1,347 @@
+<!doctype html>
+<html lang="es-MX">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Tu casa protegida</title>
+<meta name="description" content="Seguro de casa Hogar Versátil de GNP: tus cosas, tu casa y lo que le debas a otros, explicado claro.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&family=IBM+Plex+Mono:wght@500;600&display=swap">
+<style>
+  :root{
+    --paper:#F3F6F4; --card:#FFFFFF; --wash:#E4EDE9;
+    --ink:#10231F; --ink-2:#3D5550; --ink-3:#6B827C;
+    --pine:#1F5C55; --pine-2:#2E7A71; --pine-wash:#D5E7E2;
+    --marigold:#D98A1E; --marigold-ink:#8A5208; --marigold-wash:#FBEBD2;
+    --line:#CFDDD8;
+    --ok:#2D7A4F; --ok-wash:#DCEFE3; --warn:#9A5B0B; --warn-wash:#FBEBD2;
+    --shadow:0 1px 2px rgba(16,35,31,.06),0 18px 40px -28px rgba(16,35,31,.45);
+  }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      color-scheme:dark;
+      --paper:#0D1614; --card:#14201D; --wash:#1A2925;
+      --ink:#E7F0ED; --ink-2:#AFC3BD; --ink-3:#7D958F;
+      --pine:#6FC2B6; --pine-2:#8AD3C8; --pine-wash:#163330;
+      --marigold:#F2B04F; --marigold-ink:#F7C980; --marigold-wash:#34260F;
+      --line:#24342F;
+      --ok:#6FCB95; --ok-wash:#15301F; --warn:#F2B04F; --warn-wash:#34260F;
+      --shadow:0 1px 2px rgba(0,0,0,.4),0 18px 40px -28px rgba(0,0,0,.9);
+    }
+  }
+  :root[data-theme="dark"]{
+    color-scheme:dark;
+    --paper:#0D1614; --card:#14201D; --wash:#1A2925;
+    --ink:#E7F0ED; --ink-2:#AFC3BD; --ink-3:#7D958F;
+    --pine:#6FC2B6; --pine-2:#8AD3C8; --pine-wash:#163330;
+    --marigold:#F2B04F; --marigold-ink:#F7C980; --marigold-wash:#34260F;
+    --line:#24342F;
+    --ok:#6FCB95; --ok-wash:#15301F; --warn:#F2B04F; --warn-wash:#34260F;
+    --shadow:0 1px 2px rgba(0,0,0,.4),0 18px 40px -28px rgba(0,0,0,.9);
+  }
+  *{box-sizing:border-box}
+  [hidden]{display:none!important}
+  html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
+  body{margin:0;background:var(--paper);color:var(--ink);font-family:"Atkinson Hyperlegible",system-ui,-apple-system,"Segoe UI",sans-serif;font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased;padding-bottom:84px}
+  .wrap{max-width:1040px;margin:0 auto;padding-inline:20px}
+  :focus-visible{outline:3px solid var(--marigold);outline-offset:3px;border-radius:6px}
+  h1,h2,h3{font-family:"Bricolage Grotesque",Georgia,sans-serif;letter-spacing:-.02em;text-wrap:balance;margin:0}
+  h1{font-size:clamp(36px,7vw,68px);line-height:1.02;font-weight:800}
+  h2{font-size:clamp(28px,4.6vw,44px);line-height:1.08;font-weight:800}
+  h3{font-size:21px;line-height:1.2;font-weight:700}
+  p{margin:0;max-width:62ch}
+  .mono{font-family:"IBM Plex Mono",ui-monospace,monospace;font-variant-numeric:tabular-nums}
+  .eyebrow{font-family:"IBM Plex Mono",monospace;font-size:12px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--pine)}
+  section{padding-block:72px;scroll-margin-top:20px}
+  .sec-intro{display:grid;gap:12px;margin-bottom:32px;max-width:720px}
+  .sec-intro p{color:var(--ink-2);font-size:18px}
+
+  /* HERO */
+  .hero{padding-block:56px 40px;display:grid;grid-template-columns:1.25fr .9fr;gap:40px;align-items:end}
+  .hero-copy{display:grid;gap:22px}
+  .hero-copy .lede{font-size:20px;color:var(--ink-2)}
+  .hero-copy .lede b{color:var(--ink)}
+  .btns{display:flex;flex-wrap:wrap;gap:10px}
+  .btn{display:inline-flex;align-items:center;gap:8px;font:inherit;font-weight:700;font-size:17px;padding:14px 22px;border-radius:999px;border:2px solid transparent;cursor:pointer;text-decoration:none;transition:transform .15s}
+  .btn:hover{transform:translateY(-1px)}
+  .btn.primary{background:var(--ink);color:var(--paper)}
+  .btn.ghost{background:transparent;color:var(--ink);border-color:var(--ink)}
+  .proof{background:var(--card);border-radius:22px;padding:26px;box-shadow:var(--shadow);display:grid;gap:14px;border:1px solid var(--line)}
+  .proof .tag{justify-self:start;font-family:"IBM Plex Mono",monospace;font-size:11px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--marigold-ink);background:var(--marigold-wash);padding:4px 9px;border-radius:999px}
+  .proof .row{display:flex;justify-content:space-between;align-items:baseline;gap:12px;border-top:1px dashed var(--line);padding-top:12px}
+  .proof .row span{color:var(--ink-2);font-size:15px}
+  .proof .row b{font-family:"IBM Plex Mono",monospace;font-size:20px;font-variant-numeric:tabular-nums;white-space:nowrap}
+  .proof .big b{font-size:30px;color:var(--pine)}
+  .proof small{color:var(--ink-3);font-size:13px}
+  @media (max-width:820px){.hero{grid-template-columns:1fr;padding-top:36px}}
+
+  /* FACTS */
+  .facts{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);border-radius:18px;overflow:hidden;border:1px solid var(--line)}
+  .fact{background:var(--card);padding:20px;display:grid;gap:4px}
+  .fact b{font-family:"Bricolage Grotesque",sans-serif;font-size:22px}
+  .fact span{color:var(--ink-2);font-size:15px;line-height:1.45}
+  @media (max-width:820px){.facts{grid-template-columns:1fr 1fr}}
+  @media (max-width:440px){.facts{grid-template-columns:1fr}}
+
+  /* FEARS */
+  .chips{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:22px}
+  .chip{font:inherit;font-size:16px;cursor:pointer;background:var(--card);color:var(--ink);border:2px solid var(--line);border-radius:999px;padding:11px 18px;text-align:left;transition:border-color .15s,background .15s}
+  .chip:hover{border-color:var(--pine)}
+  .chip[aria-pressed="true"]{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+  .answer{background:var(--card);border:1px solid var(--line);border-left:6px solid var(--marigold);border-radius:18px;padding:26px 28px;box-shadow:var(--shadow);display:grid;gap:12px;min-height:180px}
+  .answer .q{font-family:"Bricolage Grotesque",sans-serif;font-size:24px;font-weight:700;line-height:1.2}
+  .answer .a{font-size:18px;color:var(--ink-2)}
+  .answer .prod{justify-self:start;font-family:"IBM Plex Mono",monospace;font-size:12px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--pine);background:var(--pine-wash);padding:5px 10px;border-radius:999px}
+
+  /* TIME / SLIDER */
+  .time{--paper:#F3F6F4;background:#10231F;color:#F3F6F4;border-radius:28px;padding:44px clamp(20px,4vw,48px);display:grid;gap:28px}
+  .time .eyebrow{color:var(--marigold)}
+  .time h2{color:#F3F6F4}
+  .time .ms .age,.time .eyebrow{color:#F2B04F}
+  .time .sub{color:color-mix(in srgb,var(--paper) 72%,transparent);font-size:18px}
+  .picker{display:grid;gap:10px}
+  .picker label{font-weight:700}
+  .stops{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+  .stop{font:inherit;cursor:pointer;border-radius:14px;padding:14px 10px;border:2px solid color-mix(in srgb,var(--paper) 25%,transparent);background:transparent;color:var(--paper);display:grid;gap:2px;text-align:center}
+  .stop b{font-family:"IBM Plex Mono",monospace;font-size:22px;font-variant-numeric:tabular-nums}
+  .stop span{font-size:13px;opacity:.75}
+  .stop[aria-pressed="true"]{background:var(--marigold);border-color:var(--marigold);color:#1C1406}
+  .stop[aria-pressed="true"] span{opacity:.85}
+  .life{display:grid;gap:8px}
+  .bar{display:flex;height:34px;border-radius:10px;overflow:hidden;font-family:"IBM Plex Mono",monospace;font-size:12px;font-weight:600}
+  .bar .pay{background:var(--marigold);color:#1C1406;display:flex;align-items:center;justify-content:center;flex:5 0 0;white-space:nowrap;padding-inline:6px}
+  .bar .cov{background:var(--pine-2);color:#06201C;display:flex;align-items:center;padding-left:12px;flex:62 0 0;white-space:nowrap}
+  .ticks{display:flex;justify-content:space-between;font-family:"IBM Plex Mono",monospace;font-size:12px;opacity:.75}
+  .milestones{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+  .ms{background:color-mix(in srgb,var(--paper) 8%,transparent);border:1px solid color-mix(in srgb,var(--paper) 15%,transparent);border-radius:16px;padding:18px;display:grid;gap:6px;align-content:start}
+  .ms .age{font-family:"IBM Plex Mono",monospace;font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--marigold)}
+  .ms b{font-family:"IBM Plex Mono",monospace;font-size:clamp(20px,2.4vw,26px);font-variant-numeric:tabular-nums;line-height:1.15}
+  .ms span{font-size:14px;opacity:.8;line-height:1.4}
+  .time small{opacity:.65;font-size:13px}
+  @media (max-width:820px){.milestones{grid-template-columns:1fr 1fr}}
+  @media (max-width:440px){.milestones{grid-template-columns:1fr}.stop b{font-size:18px}}
+
+  /* WHO */
+  .who{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:22px}
+  .who button{font:inherit;cursor:pointer;text-align:left;border-radius:20px;border:2px solid var(--line);background:var(--card);padding:22px;display:grid;gap:6px;color:var(--ink)}
+  .who button .k{font-family:"IBM Plex Mono",monospace;font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--pine)}
+  .who button b{font-family:"Bricolage Grotesque",sans-serif;font-size:26px;line-height:1.1}
+  .who button span{color:var(--ink-2);font-size:15px}
+  .who button[aria-pressed="true"]{border-color:var(--pine);background:var(--pine-wash)}
+  .who.three{grid-template-columns:repeat(3,1fr)}
+  @media (max-width:640px){.who,.who.three{grid-template-columns:1fr}}
+  .plan{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+  .panel{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:26px;box-shadow:var(--shadow);display:grid;gap:14px;align-content:start}
+  .panel h3{display:flex;align-items:center;gap:10px}
+  .ledger{display:grid;gap:0}
+  .ledger div{display:flex;justify-content:space-between;gap:14px;padding:10px 0;border-bottom:1px dashed var(--line);align-items:baseline}
+  .ledger div:last-child{border-bottom:none}
+  .ledger span{color:var(--ink-2);font-size:15.5px}
+  .ledger b{font-family:"IBM Plex Mono",monospace;font-variant-numeric:tabular-nums;font-size:18px;white-space:nowrap}
+  .ledger .hl b{color:var(--pine);font-size:22px}
+  .list{margin:0;padding:0;list-style:none;display:grid;gap:10px}
+  .list li{padding-left:28px;position:relative;font-size:16px;line-height:1.5}
+  .list li::before{content:"";position:absolute;left:4px;top:.5em;width:12px;height:12px;border-radius:50%;background:var(--marigold)}
+  @media (max-width:760px){.plan{grid-template-columns:1fr}}
+
+  /* HONEST */
+  .honest{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
+  .h{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:22px;display:grid;gap:8px}
+  .h b{font-family:"Bricolage Grotesque",sans-serif;font-size:19px}
+  .h p{color:var(--ink-2);font-size:16px}
+  @media (max-width:640px){.honest{grid-template-columns:1fr}}
+
+  /* CTA */
+  .cta{background:var(--marigold-wash);border:1px solid color-mix(in srgb,var(--marigold) 40%,transparent);border-radius:28px;padding:40px clamp(20px,4vw,48px);display:grid;gap:18px}
+  .cta .num{font-family:"IBM Plex Mono",monospace;font-size:clamp(28px,5vw,40px);font-weight:600;user-select:all;color:var(--ink)}
+  .copy-ok{font-size:14px;color:var(--ok);min-height:1.2em}
+  footer{padding-block:40px 30px;color:var(--ink-3);font-size:14px;display:grid;gap:8px}
+  footer p{max-width:80ch}
+
+  /* sticky bar */
+  .sticky{position:fixed;left:0;right:0;bottom:0;padding:10px 16px calc(10px + env(safe-area-inset-bottom,0px));background:color-mix(in srgb,var(--paper) 92%,transparent);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-top:1px solid var(--line);display:flex;justify-content:center;gap:10px;z-index:40}
+  .sticky .btn{padding:11px 20px;font-size:16px}
+  @media (prefers-reduced-motion: reduce){*{transition:none!important;scroll-behavior:auto!important}}
+  .count{transition:opacity .2s}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header class="hero">
+    <div class="hero-copy">
+      <span class="eyebrow">Seguro de casa · Hogar Versátil · GNP</span>
+      <h1>Tu casa, tus cosas y lo que le debas a otros. Cubierto.</h1>
+      <p class="lede">Ya sea que <b>rentes, seas dueño o rentes tu casa a alguien</b>. Por unos cientos de pesos al mes, un robo, un incendio, un temblor o una demanda dejan de ser tu problema.</p>
+      <div class="btns">
+        <a class="btn primary" href="#para">Ver qué cubre en mi caso</a>
+        <a class="btn ghost" href="https://wa.me/523117408139?text=Hola%20Dal%C3%AD%2C%20quiero%20cotizar%20mi%20seguro%20de%20casa" target="_blank" rel="noopener">Cotizar por WhatsApp</a>
+      </div>
+    </div>
+    <aside class="proof" aria-label="Ejemplo real">
+      <span class="tag">Ejemplo real · Pareja que renta en Guadalajara</span>
+      <div class="row big"><span>Pagan al año</span><b>$7,016</b></div>
+      <div class="row"><span>Todo lo de adentro, contra incendio, huracán y temblor</span><b>$900,000</b></div>
+      <div class="row"><span>Lo que le deban a otros, incluida la casa del dueño</span><b>$1,800,000</b></div>
+      <div class="row"><span>Robo en casa y asalto en la calle</span><b>$300,000</b></div>
+      <small>Cotización GNP de octubre de 2026, unos $585 al mes. Tu precio depende de tu casa y de lo que asegures.</small>
+    </aside>
+  </header>
+
+  <div class="facts" role="list">
+    <div class="fact" role="listitem"><b>Todo riesgo</b><span>Cubre cualquier accidente súbito que no esté excluido, no solo incendio.</span></div>
+    <div class="fact" role="listitem"><b>Sin castigo</b><span>Si aseguras de menos, te pagan hasta tu suma; no te recortan en proporción.</span></div>
+    <div class="fact" role="listitem"><b>Doctor gratis</b><span>Videoconsulta con receta, ilimitada, desde el primer día.</span></div>
+    <div class="fact" role="listitem"><b>Plomero y cerrajero</b><span>De urgencia, las 24 horas, sin límite de veces.</span></div>
+  </div>
+
+  <section id="miedos">
+    <div class="sec-intro">
+      <span class="eyebrow">¿Me pagan si…?</span>
+      <h2>Toca lo que te preocupa</h2>
+    </div>
+    <div class="chips" role="group" aria-label="Preocupaciones">
+      <button class="chip" type="button" data-f="0" aria-pressed="true">Se meten a robar a mi casa</button>
+      <button class="chip" type="button" data-f="1" aria-pressed="false">Me asaltan en la calle</button>
+      <button class="chip" type="button" data-f="2" aria-pressed="false">Se incendia mi casa</button>
+      <button class="chip" type="button" data-f="3" aria-pressed="false">Tiembla o pega un huracán</button>
+      <button class="chip" type="button" data-f="4" aria-pressed="false">Mi fuga moja al vecino</button>
+      <button class="chip" type="button" data-f="5" aria-pressed="false">Mi perro muerde a alguien</button>
+      <button class="chip" type="button" data-f="6" aria-pressed="false">Un pico de luz quema el refri</button>
+      <button class="chip" type="button" data-f="7" aria-pressed="false">Rento, ¿para qué quiero seguro?</button>
+      <button class="chip" type="button" data-f="8" aria-pressed="false">¿Y si nunca pasa nada?</button>
+    </div>
+    <div class="answer" aria-live="polite">
+      <div class="q" id="fq"></div>
+      <p class="a" id="fa"></p>
+      <span class="prod" id="fp"></span>
+    </div>
+  </section>
+
+  <section id="para">
+    <div class="sec-intro">
+      <span class="eyebrow">Tu caso</span>
+      <h2>¿Cuál es tu situación?</h2>
+      <p>La póliza se arma distinto según tu relación con la casa. Así no pagas por lo que no es tuyo.</p>
+    </div>
+    <div class="who three" role="group" aria-label="Tu situación">
+      <button type="button" data-p="inq" aria-pressed="true"><span class="k">Inquilino</span><b>Rento donde vivo</b><span>La versión más barata.</span></button>
+      <button type="button" data-p="due" aria-pressed="false"><span class="k">Propietario</span><b>Soy dueño y vivo ahí</b><span>La protección completa.</span></button>
+      <button type="button" data-p="arr" aria-pressed="false"><span class="k">Arrendador</span><b>La rento a alguien</b><span>Tu casa y tu renta.</span></button>
+    </div>
+    <div class="plan" id="p-inq">
+      <div class="panel"><h3>Lo que aseguras</h3><ul class="list">
+        <li><b>Tus cosas:</b> muebles, ropa, electrodomésticos, electrónicos. Contra incendio, accidentes, robo, huracán y temblor.</li>
+        <li><b>Lo que le debas a otros:</b> al vecino, a quien se lastime en tu casa, lo que haga tu mascota.</li>
+        <li><b>La casa del dueño</b> si se incendia o explota por un descuido tuyo.</li>
+        <li><b>Dónde vivir</b> si tu casa queda inhabitable: mudanza, bodega y la diferencia de renta, hasta 6 meses.</li>
+      </ul></div>
+      <div class="panel"><h3>Lo que no pagas</h3><ul class="list">
+        <li>La construcción: esa le toca al dueño.</li>
+        <li>Tu protección por la casa rentada es solo por incendio o explosión; una puerta rota o una mancha no entran.</li>
+      </ul></div>
+    </div>
+    <div class="plan" id="p-due" hidden>
+      <div class="panel"><h3>Lo que aseguras</h3><ul class="list">
+        <li><b>La construcción:</b> por lo que costaría volver a levantarla, no por lo que pagaste.</li>
+        <li><b>Todo lo de adentro</b>, contra incendio, accidentes, robo, huracán y temblor.</li>
+        <li><b>Lo que le debas a otros</b>, incluida tu mascota y las fugas de agua.</li>
+        <li><b>Dónde vivir</b> mientras reparan: mudanza, hotel o renta temporal y bodega.</li>
+      </ul></div>
+      <div class="panel"><h3>Para que te paguen bien</h3><ul class="list">
+        <li>Declara bien los metros, el año y los materiales de tu casa.</li>
+        <li>Avisa si estás a menos de 200 m de un lago o laguna.</li>
+        <li>Con eso no hay doble deducible el día del siniestro.</li>
+      </ul></div>
+    </div>
+    <div class="plan" id="p-arr" hidden>
+      <div class="panel"><h3>Lo que aseguras</h3><ul class="list">
+        <li><b>La construcción</b>, aunque viva otra persona.</li>
+        <li><b>Los muebles que dejaste</b> en la casa. Las cosas de tu inquilino van en su propio seguro.</li>
+        <li><b>La renta que dejarías de cobrar</b> si la casa queda inhabitable, hasta 6 meses.</li>
+        <li><b>Lo que le debas a otros</b> como dueño.</li>
+      </ul></div>
+      <div class="panel"><h3>Para cobrar la renta perdida</h3><ul class="list">
+        <li>Contrato de renta vigente y firmado.</li>
+        <li>El recibo del último pago antes del siniestro.</li>
+        <li>Que tu inquilino no sea pariente cercano y que la casa no esté vacía.</li>
+      </ul></div>
+    </div>
+  </section>
+
+  <section id="incluido">
+    <div class="sec-intro">
+      <span class="eyebrow">Se usa aunque nunca pase nada</span>
+      <h2>Lo que ya viene incluido</h2>
+    </div>
+    <div class="honest">
+      <div class="h"><b>Doctor por videollamada</b><p>Médico general que te receta, gratis e ilimitado, las 24 horas. Y la primera ambulancia del año sin costo.</p></div>
+      <div class="h"><b>Urgencias en casa</b><p>Plomero, cerrajero, electricista y vidriero, hasta $1,500 por servicio, sin límite de veces.</p></div>
+      <div class="h"><b>Abogado</b><p>Por teléfono, gratis, y te acompaña al Ministerio Público si te roban en casa.</p></div>
+      <div class="h"><b>Tu mascota</b><p>Orientación veterinaria por teléfono y búsqueda con carteles si se pierde.</p></div>
+    </div>
+  </section>
+
+  <section id="claro">
+    <div class="sec-intro">
+      <span class="eyebrow">Cuentas claras</span>
+      <h2>Lo que te digo antes de firmar</h2>
+    </div>
+    <div class="honest">
+      <div class="h"><b>Robo es con violencia</b><p>Si se lo llevan sin forzar nada, si lo pierdes o te lo sacan sin que te des cuenta, no paga. Y no paga si la casa está deshabitada.</p></div>
+      <div class="h"><b>Joyas y efectivo tienen tope</b><p>Las joyas en casa, hasta el 10 % de tu suma de robo; el efectivo, el 3 %. Piezas caras se aseguran aparte con factura o avalúo.</p></div>
+      <div class="h"><b>Temblor y huracán llevan deducible</b><p>Es un porcentaje de lo que aseguras. Te lo enseño en pesos antes de contratar.</p></div>
+      <div class="h"><b>No necesitas facturas de todo</b><p>Fotos, video y correos de compra sirven. Graba hoy un video de tu casa y guárdalo en la nube.</p></div>
+    </div>
+  </section>
+
+  <section id="platicamos">
+    <div class="cta">
+      <span class="eyebrow">Tu cotización</span>
+      <h2>Te la armo en una llamada, a tu medida.</h2>
+      <p>Dime si rentas o eres dueño, tu código postal y más o menos cuánto valen tus cosas. Te digo qué te conviene asegurar y qué no.</p>
+      <div class="num" id="wa-num">311 740 8139</div>
+      <div class="btns">
+        <a class="btn primary" href="https://wa.me/523117408139?text=Hola%20Dal%C3%AD%2C%20quiero%20cotizar%20mi%20seguro%20de%20casa" target="_blank" rel="noopener">Abrir WhatsApp</a>
+        <button class="btn ghost" type="button" id="copy">Copiar número</button>
+      </div>
+      <div class="copy-ok" id="copy-ok" aria-live="polite"></div>
+      <p>También por correo: <b>dali.fp.ibarra@gmail.com</b></p>
+    </div>
+  </section>
+
+  <footer>
+    <p><b>Fernando Dalí Pérez Ibarra</b> · Agente de seguros GNP · Guadalajara, atiendo por videollamada en todo México.</p>
+    <p>Basado en las condiciones generales de Hogar Versátil (septiembre 2025, FPC031100-N_0925BTW09). Ejemplo: cotización GNP de octubre de 2026 para inquilinos en Guadalajara. Información de carácter informativo; las coberturas, sumas, deducibles y exclusiones finales son las de tu póliza.</p>
+  </footer>
+</div>
+
+<div class="sticky">
+  <a class="btn primary" href="https://wa.me/523117408139?text=Hola%20Dal%C3%AD%2C%20quiero%20cotizar%20mi%20seguro%20de%20casa" target="_blank" rel="noopener">Cotizar mi seguro de casa</a>
+</div>
+
+<script>
+(function(){
+  var F=[
+    ["Se meten a robar a mi casa","Si entran forzando puertas o ventanas, o te asaltan dentro, te pagan lo robado hasta tu suma de robo. Las joyas y el efectivo tienen su propio tope.","Robo dentro de la casa"],
+    ["Me asaltan en la calle","Te reponen lo que traías encima, en cualquier país: celular, laptop personal, cartera, reloj. Si se te pierde o te lo sacan sin que te des cuenta, no.","Artículos en tránsito"],
+    ["Se incendia mi casa","Si eres dueño, te pagan reconstruirla y tus cosas. Si rentas, tus cosas y lo que el dueño te reclame si fue por un descuido tuyo.","Todo riesgo e incendio"],
+    ["Tiembla o pega un huracán","Se contratan aparte y las recomiendo siempre. Pagas un deducible y GNP pone el resto, sin coaseguro en el ejemplo.","Terremoto e hidrometeorológicos"],
+    ["Mi fuga moja al vecino","Le pagan al vecino lo que te toque, y los abogados si hace falta.","Responsabilidad civil"],
+    ["Mi perro muerde a alguien","Lo cubre tu responsabilidad civil familiar: los gastos de la persona y lo que le debas pagar.","Responsabilidad civil"],
+    ["Un pico de luz quema el refri","Te pagan la reparación o el aparato, y la comida que se echó a perder si se pierde el refri.","Equipo electrónico"],
+    ["Rento, ¿para qué quiero seguro?","El dueño asegura los ladrillos, no tus cosas. Y si por un descuido tuyo se incendia, te reclama a ti. Como inquilino es la versión más barata.","Contenidos y responsabilidad civil"],
+    ["¿Y si nunca pasa nada?","Lo usas igual: doctor por videollamada gratis, plomero y cerrajero de urgencia, abogado por teléfono.","Asistencias incluidas"]
+  ];
+  var chips=[].slice.call(document.querySelectorAll(".chip"));
+  function show(i){document.getElementById("fq").textContent="«"+F[i][0]+"»";document.getElementById("fa").textContent=F[i][1];document.getElementById("fp").textContent="Lo cubre: "+F[i][2];chips.forEach(function(c){c.setAttribute("aria-pressed",+c.dataset.f===i?"true":"false");});}
+  chips.forEach(function(c){c.addEventListener("click",function(){show(+c.dataset.f);});});show(0);
+  var who=[].slice.call(document.querySelectorAll(".who button"));
+  who.forEach(function(b){b.addEventListener("click",function(){who.forEach(function(x){x.setAttribute("aria-pressed",x===b?"true":"false");});["inq","due","arr"].forEach(function(k){document.getElementById("p-"+k).hidden=b.dataset.p!==k;});});});
+  var copy=document.getElementById("copy"),ok=document.getElementById("copy-ok");
+  copy.addEventListener("click",function(){function sel(){var r=document.createRange();r.selectNodeContents(document.getElementById("wa-num"));var s=window.getSelection();s.removeAllRanges();s.addRange(r);ok.textContent="Número seleccionado: cópialo con tu teclado.";}try{navigator.clipboard.writeText("3117408139").then(function(){ok.textContent="Número copiado.";},sel);}catch(e){sel();}});
+})();
+</script>
+</body>
+</html>
